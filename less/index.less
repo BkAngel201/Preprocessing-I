@@ -57,7 +57,13 @@ table {
 
 @mainFontColor: #daad2e;
 @alternativeColor: #c25805;
+@navColor: #942603;
 
+
+// media queries
+@media500: ~"only screen and (max-width: 500px)";
+@media860: ~"only screen and (max-width: 860px)";
+@media1100: ~"only screen and (max-width: 1100px)";
 
 
 html, body {
@@ -86,27 +92,38 @@ html, body {
 nav {
 	position: fixed;
 	.flex();
-	height: 45px;
+	min-height: 45px;
 	width: 100%;
-	background-color: #848484;
+	background-color: @navColor;
 	justify-content: space-around;
 	z-index: 1000;
-		ul {
-			.flex();
-			width: 80%;
-			max-width: 500px;
-			li {
-				font-size: 1.3rem;
-				text-align: center;
-				flex-grow: 1;
-				.flex();
-				a {
-					width: 100%;
-					padding: 10px 0;
-					
-				}
-			}	
+	ul {
+		.flex();
+		width: 500px;
+		@media @media1100 {
+			width: 100%;
+			.flex-column();
 		}
+		li {
+			font-size: 1.3rem;
+			text-align: center;
+			flex-grow: 1;
+			.flex();
+			@media @media1100 {
+				width: 100%;
+			}
+			a {
+				width: 100%;
+				padding: 10px 0;
+				color: @mainFontColor;
+				text-decoration: none;
+				&:hover {
+					background-color: @mainFontColor;
+					color: @navColor;
+				}
+			}
+		}	
+	}
 }
 
 h1 {
@@ -140,13 +157,18 @@ p {
 	margin: auto;
 	background-color: rgba(51, 51, 51, .8);
 	padding: 0 50px;
+	@media @media1100 {
+		width: 100%;
+	}
 	header {
 		.flex-column();
 		height: 100vh;
 		width: 100%;
 		padding-top: 220px;
-		
 		text-align: center;
+		@media @media1100 {
+			padding-top: 320px;
+		}
 		.divider {
 			margin: 20px 120px 30px;
 		}
@@ -165,7 +187,7 @@ p {
 		}
 	}
 	section {
-		height: 88vh;
+		min-height: 88vh;
 		h2 {
 			margin-top: 30px;
 			margin-bottom: 30px;
@@ -177,10 +199,22 @@ p {
 				height: 910px;
 				bottom: 0;
 				left: -50px;
+				@media @media1100 {
+					height: 500px;
+				}
+				@media @media860 {
+					.hide();
+				}
 			}
 			p {
 				padding-left: 450px;
 				margin-bottom: 30px;
+				@media @media1100 {
+					padding-left: 220px;
+				}
+				@media @media860 {
+					padding-left: 0;
+				}
 			}
 		}
 		&.abilities-section {
@@ -195,6 +229,9 @@ p {
 					width: 45%;
 					font-size: 1.2rem;
 					margin-bottom: 80px;
+					@media @media860 {
+						width: 100%;
+					}
 					img {
 						margin-right: 20px;
 					}
@@ -218,6 +255,38 @@ p {
 						}
 					}
 
+				}
+			}
+		}
+		&.contact-section {
+			.flex();
+			.flex-wrap();
+			h2 {
+				width: 100%
+			}
+			form {
+				.flex-column();
+				width: 100%;
+				input, textarea {
+					font-size: 1.2rem;
+					color: @mainFontColor;
+					background: rgba(51, 51, 51, .5);
+					border: 1px solid @alternativeColor;
+					padding: 20px;
+					resize: none;
+					margin-bottom: 30px;
+				}
+				textarea {
+					font-size: 1.6rem;
+				}
+			}
+			footer {
+				width: 100%;
+				padding: 0 0 30px 0;
+				align-self: flex-end;
+				text-align: center;
+				.divider {
+					margin-bottom: 30px;
 				}
 			}
 		}

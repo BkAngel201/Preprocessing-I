@@ -154,16 +154,22 @@ body {
 nav {
   position: fixed;
   display: flex;
-  height: 45px;
+  min-height: 45px;
   width: 100%;
-  background-color: #848484;
+  background-color: #942603;
   justify-content: space-around;
   z-index: 1000;
 }
 nav ul {
   display: flex;
-  width: 80%;
-  max-width: 500px;
+  width: 500px;
+}
+@media only screen and (max-width: 1100px) {
+  nav ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
 }
 nav ul li {
   font-size: 1.3rem;
@@ -171,9 +177,20 @@ nav ul li {
   flex-grow: 1;
   display: flex;
 }
+@media only screen and (max-width: 1100px) {
+  nav ul li {
+    width: 100%;
+  }
+}
 nav ul li a {
   width: 100%;
   padding: 10px 0;
+  color: #daad2e;
+  text-decoration: none;
+}
+nav ul li a:hover {
+  background-color: #daad2e;
+  color: #942603;
 }
 h1 {
   font-size: 8rem;
@@ -212,6 +229,11 @@ p {
   background-color: rgba(51, 51, 51, 0.8);
   padding: 0 50px;
 }
+@media only screen and (max-width: 1100px) {
+  .container {
+    width: 100%;
+  }
+}
 .container header {
   display: flex;
   flex-direction: column;
@@ -219,6 +241,11 @@ p {
   width: 100%;
   padding-top: 220px;
   text-align: center;
+}
+@media only screen and (max-width: 1100px) {
+  .container header {
+    padding-top: 320px;
+  }
 }
 .container header .divider {
   margin: 20px 120px 30px;
@@ -235,7 +262,7 @@ p {
   border-right: 1px solid #daad2e;
 }
 .container section {
-  height: 88vh;
+  min-height: 88vh;
 }
 .container section h2 {
   margin-top: 30px;
@@ -250,9 +277,29 @@ p {
   bottom: 0;
   left: -50px;
 }
+@media only screen and (max-width: 1100px) {
+  .container section.about-section img {
+    height: 500px;
+  }
+}
+@media only screen and (max-width: 860px) {
+  .container section.about-section img {
+    display: none;
+  }
+}
 .container section.about-section p {
   padding-left: 450px;
   margin-bottom: 30px;
+}
+@media only screen and (max-width: 1100px) {
+  .container section.about-section p {
+    padding-left: 220px;
+  }
+}
+@media only screen and (max-width: 860px) {
+  .container section.about-section p {
+    padding-left: 0;
+  }
 }
 .container section.abilities-section .abilities {
   display: flex;
@@ -266,6 +313,11 @@ p {
   width: 45%;
   font-size: 1.2rem;
   margin-bottom: 80px;
+}
+@media only screen and (max-width: 860px) {
+  .container section.abilities-section .abilities .ability {
+    width: 100%;
+  }
 }
 .container section.abilities-section .abilities .ability img {
   margin-right: 20px;
@@ -288,4 +340,38 @@ p {
 .container section.abilities-section .abilities .ability .ability-lore span {
   font-weight: 700;
   color: #c25805;
+}
+.container section.contact-section {
+  display: flex;
+  flex-wrap: wrap;
+}
+.container section.contact-section h2 {
+  width: 100%;
+}
+.container section.contact-section form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.container section.contact-section form input,
+.container section.contact-section form textarea {
+  font-size: 1.2rem;
+  color: #daad2e;
+  background: rgba(51, 51, 51, 0.5);
+  border: 1px solid #c25805;
+  padding: 20px;
+  resize: none;
+  margin-bottom: 30px;
+}
+.container section.contact-section form textarea {
+  font-size: 1.6rem;
+}
+.container section.contact-section footer {
+  width: 100%;
+  padding: 0 0 30px 0;
+  align-self: flex-end;
+  text-align: center;
+}
+.container section.contact-section footer .divider {
+  margin-bottom: 30px;
 }
