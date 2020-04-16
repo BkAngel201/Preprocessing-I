@@ -138,19 +138,6 @@ body {
   background-size: cover;
   color: #daad2e;
 }
-.flex {
-  display: flex;
-}
-.flex-column {
-  display: flex;
-  flex-direction: column;
-}
-.flex-wrap {
-  flex-wrap: wrap;
-}
-.hide {
-  display: none;
-}
 nav {
   position: fixed;
   display: flex;
