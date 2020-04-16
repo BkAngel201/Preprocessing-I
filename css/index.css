@@ -134,7 +134,7 @@ html,
 body {
   height: 100vh;
   width: 100%;
-  background: url(../img/background.jpg) center 40px no-repeat fixed;
+  background: url("../img/background.jpg") center 40px no-repeat fixed;
   background-size: cover;
   color: #daad2e;
 }
@@ -365,6 +365,16 @@ p {
 }
 .container section.contact-section form textarea {
   font-size: 1.6rem;
+}
+.container section.contact-section form input[type=submit] {
+  width: 250px;
+  margin: auto;
+  border-color: #346f2a;
+  background-color: rgba(52, 111, 42, 0.5);
+}
+.container section.contact-section form input[type=submit]:hover {
+  background-color: rgba(111, 42, 42, 0.5);
+  border-color: #c25805;
 }
 .container section.contact-section footer {
   width: 100%;
